@@ -1,0 +1,18 @@
+version: '3'
+services:
+  ros:
+    build: .
+    image: ros-devel:latest
+    container_name: ros-devel
+    network_mode: host
+    volumes:
+      - /home/dvb:/home/dvb
+      - /dev:/dev
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      DISPLAY: $DISPLAY
+    privileged: true
+    restart: unless-stopped
+    tty: true
+    command: "/usr/bin/zsh"
