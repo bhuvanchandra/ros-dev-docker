@@ -35,6 +35,8 @@ RUN apt-fast install -y --no-install-recommends\
     can-utils \
     docker.io \
     zsh \
+    openocd \
+    cmake-curses-gui \
     bash-completion
 
 RUN apt-fast install -y --no-install-recommends \
@@ -189,7 +191,7 @@ RUN wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/
 
 RUN id $USER 2>/dev/null || useradd --create-home $USER
 RUN echo "$USER ALL=(ALL) NOPASSWD: ALL" | tee -a /etc/sudoers
-RUN usermod -aG docker $USER
+RUN usermod -aG sudo,audio,plugdev,video,tty,dialout,docker $USER
 USER $USER
 
 WORKDIR /home/$USER/
