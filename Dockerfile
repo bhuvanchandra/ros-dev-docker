@@ -183,6 +183,8 @@ RUN rosdep update && apt-fast install -y --no-install-recommends \
     ros-melodic-ira-laser-tools \
     ros-melodic-joy-teleop \
     ros-melodic-teleop-tools-msgs \
+    ros-melodic-gazebo-ros \
+    ros-melodic-gazebo-plugins \
     ros-melodic-tf2-sensor-msgs && \
     apt-get autoremove -y
 
