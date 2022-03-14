@@ -1,9 +1,9 @@
 version: '3'
 services:
-  ros:
+  ros-noetic:
     build: .
-    image: ros-devel:latest
-    container_name: ros-devel
+    image: ros-devel:noetic
+    container_name: ros-devel-noetic
     network_mode: host
     volumes:
       - /home/dvb:/home/dvb
